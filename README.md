@@ -1,8 +1,11 @@
 # media_store
 
 [![Build Status](https://travis-ci.org/amondnet-z/media_store.svg?branch=master)](https://travis-ci.org/amondnet/media_store#)
-[![pub package](https://img.shields.io/pub/v/media_store.svg)](https://pub.dartlang.org/packages/media_store)
-[![license](https://badgen.net/github/license/amondnet/media_store)](https://choosealicense.com/licenses/mit/)
+[![pub package](https://badgen.net/pub/v/media_store)](https://pub.dartlang.org/packages/media_store)
+[![license](https://badgen.net/github/license/amondnet/media_store)](https://github.com/amondnet/media_store/blob/master/LICENSE)
+[![flutter-platform](https://badgen.net/pub/flutter-platform/media_store)](https://pub.dartlang.org/packages/media_store)
+[![sdk-version](https://badgen.net/pub/sdk-version/media_store)](https://pub.dartlang.org/packages/media_store)
+
 
 We use the `media_store` plugin to select images from the Android and iOS image library, but it can't save images to the gallery. This plugin can provide this feature.
 
