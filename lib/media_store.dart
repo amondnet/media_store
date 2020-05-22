@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
 
-class ImageGallerySaver {
+class MediaStore {
   static const MethodChannel _channel =
       const MethodChannel('net.amond/media_store');
 

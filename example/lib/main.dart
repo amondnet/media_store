@@ -92,8 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _globalKey.currentContext.findRenderObject();
     ui.Image image = await boundary.toImage();
     ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    final result =
-        await ImageGallerySaver.saveImage(byteData.buffer.asUint8List());
+    final result = await MediaStore.saveImage(byteData.buffer.asUint8List());
     print(result);
   }
 
@@ -102,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
         "https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg",
         options: Options(responseType: ResponseType.bytes));
     final result =
-        await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
+        await MediaStore.saveImage(Uint8List.fromList(response.data));
     print(result);
   }
 
@@ -111,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String savePath = appDocDir.path + "/temp.mp4";
     await Dio().download(
         "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", savePath);
-    final result = await ImageGallerySaver.saveFile(savePath);
+    final result = await MediaStore.saveFile(savePath);
     print(result);
   }
 }
