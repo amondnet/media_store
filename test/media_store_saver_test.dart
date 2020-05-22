@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:media_store/media_store.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('image_gallery_saver');
+  const MethodChannel channel = MethodChannel('net.amond/media_store');
   final List<MethodCall> log = <MethodCall>[];
   bool response;
 
@@ -17,7 +17,6 @@ void main() {
     log.clear();
   });
 
-
   test('saveImageToGallery test', () async {
     response = true;
     Uint8List imageBytes = Uint8List(16);
@@ -28,5 +27,4 @@ void main() {
     );
     expect(result, response);
   });
-
 }

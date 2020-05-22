@@ -1,4 +1,4 @@
-group 'com.example.imagegallerysaver'
+group 'net.amond.mediastore'
 version '1.0-SNAPSHOT'
 
 buildscript {

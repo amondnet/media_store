@@ -1,8 +1,8 @@
-name: image_gallery_saver
+name: media_store
 description: A new flutter plugin project for save image to gallery, iOS need to add the following keys to your Info.plist file.
 version: 1.2.2
-author: quicey <quiceyxu@gmail.com>
-homepage: https://github.com/hui-z/image_gallery_saver
+author: Minsu Lee
+homepage: https://github.com/amondnet/media_store
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -18,8 +18,8 @@ dependencies:
 # The following section is specific to Flutter.
 flutter:
   plugin:
-    androidPackage: com.example.imagegallerysaver
-    pluginClass: ImageGallerySaverPlugin
+    androidPackage: net.amond.mediastore
+    pluginClass: MediaStorePlugin
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,4 @@
-package com.example.imagegallerysaver
+package net.amond.mediastore
 
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -16,27 +16,28 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
-class ImageGallerySaverPlugin(private val registrar: Registrar): MethodCallHandler {
+class MediaStorePlugin(private val registrar: Registrar): MethodCallHandler {
 
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "image_gallery_saver")
-      channel.setMethodCallHandler(ImageGallerySaverPlugin(registrar))
+      val channel = MethodChannel(registrar.messenger(), "net.amond/media_store")
+      channel.setMethodCallHandler(
+          MediaStorePlugin(registrar))
     }
   }
 
   override fun onMethodCall(call: MethodCall, result: Result): Unit {
-    when {
-        call.method == "saveImageToGallery" -> {
-          val image = call.arguments as ByteArray
-          result.success(saveImageToGallery(BitmapFactory.decodeByteArray(image,0,image.size)))
-        }
-        call.method == "saveFileToGallery" -> {
-          val path = call.arguments as String
-          result.success(saveFileToGallery(path))
-        }
-        else -> result.notImplemented()
+    when (call.method) {
+      "saveImageToGallery" -> {
+        val image = call.arguments as ByteArray
+        result.success(saveImageToGallery(BitmapFactory.decodeByteArray(image,0,image.size)))
+      }
+      "saveFileToGallery" -> {
+        val path = call.arguments as String
+        result.success(saveFileToGallery(path))
+      }
+      else -> result.notImplemented()
     }
 
   }
