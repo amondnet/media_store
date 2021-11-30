@@ -6,7 +6,7 @@ import 'package:media_store/media_store.dart';
 void main() {
   const MethodChannel channel = MethodChannel('net.amond/media_store');
   final List<MethodCall> log = <MethodCall>[];
-  bool response;
+  bool response = true;
 
   channel.setMockMethodCallHandler((MethodCall methodCall) async {
     log.add(methodCall);
